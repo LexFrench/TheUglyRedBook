@@ -152,9 +152,7 @@
                     
 
 
-  
-
-<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="The Ugly Red Book" class="md-nav__button md-logo" aria-label="The Ugly Red Book" data-md-component="logo">
       
@@ -548,19 +546,84 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#get-a-list-of-linked-libraries-for-a-specific-process-id" class="md-nav__link">
+    Get a list of linked libraries for a specific process ID
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gdb-commands" class="md-nav__link">
+    GDB Commands
+  </a>
+  
+    <nav class="md-nav" aria-label="GDB Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#command" class="md-nav__link">
+    Command
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-source-code" class="md-nav__link">
+    Setting source code
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#printing-a-boostshared_ptr" class="md-nav__link">
+    Printing a boost::shared_ptr
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                <h1 id="general-debugging-tips-or-commands-for-linux">General debugging tips or commands for Linux</h1>
-<h2 id="get-a-list-of-linked-libraries-for-a-specific-process-id">Get a list of linked libraries for a specific process ID</h2>
+                <h1 id="general-debugging-tips-or-commands-for-linux">General debugging tips or commands for Linux<a class="headerlink" href="#general-debugging-tips-or-commands-for-linux" title="Permanent link">&para;</a></h1>
+<h2 id="get-a-list-of-linked-libraries-for-a-specific-process-id">Get a list of linked libraries for a specific process ID<a class="headerlink" href="#get-a-list-of-linked-libraries-for-a-specific-process-id" title="Permanent link">&para;</a></h2>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>grep fbx /proc/<span class="o">{</span>PID<span class="o">}</span>/maps
 </code></pre></div>
 </td></tr></table>
-<h2 id="gdb-commands">GDB Commands</h2>
-<h3 id="command">Command</h3>
+<h2 id="gdb-commands">GDB Commands<a class="headerlink" href="#gdb-commands" title="Permanent link">&para;</a></h2>
+<h3 id="command">Command<a class="headerlink" href="#command" title="Permanent link">&para;</a></h3>
 <p>The <code>command</code> keyword will allow you to run a command each time a break is hit.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -571,12 +634,12 @@
 &gt;end
 </code></pre></div>
 </td></tr></table>
-<h3 id="setting-source-code">Setting source code</h3>
+<h3 id="setting-source-code">Setting source code<a class="headerlink" href="#setting-source-code" title="Permanent link">&para;</a></h3>
 <p>You can set the location of the source you are debugging with the <code>directory</code> keyword.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">(</span>gdb<span class="o">)</span> directory /location/of/source/code/cpp
 </code></pre></div>
 </td></tr></table>
-<h3 id="printing-a-boostshared_ptr">Printing a boost::shared_ptr</h3>
+<h3 id="printing-a-boostshared_ptr">Printing a boost::shared_ptr<a class="headerlink" href="#printing-a-boostshared_ptr" title="Permanent link">&para;</a></h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">(</span>gdb<span class="o">)</span> <span class="nb">set</span> print pretty
@@ -651,7 +714,7 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "toc.integrate", "search.suggest", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.instant", "search.suggest", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.a1c7c35e.min.js"></script>

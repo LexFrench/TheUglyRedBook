@@ -152,9 +152,7 @@
                     
 
 
-  
-
-<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="The Ugly Red Book" class="md-nav__button md-logo" aria-label="The Ugly Red Book" data-md-component="logo">
       
@@ -597,21 +595,133 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#whats-a-decorator" class="md-nav__link">
+    What's a Decorator?
+  </a>
+  
+    <nav class="md-nav" aria-label="What's a Decorator?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functions-are-first-class-citizens" class="md-nav__link">
+    Functions are First Class Citizens
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inner-functions" class="md-nav__link">
+    Inner Functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-function-wrapper" class="md-nav__link">
+    Basic Function Wrapper
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Function Wrapper">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pour-some-sugar-on-me" class="md-nav__link">
+    Pour Some Sugar on Me!
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decorating-classes" class="md-nav__link">
+    Decorating Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Decorating Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decorating-class-methods" class="md-nav__link">
+    Decorating Class Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decorating-classes_1" class="md-nav__link">
+    Decorating Classes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-usage-fancy-stuff" class="md-nav__link">
+    Advanced Usage (Fancy Stuff)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-examples-things-ive-actually-written" class="md-nav__link">
+    Real World Examples (Things I've actually written)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                <h1 id="decorating">Decorating</h1>
+                <h1 id="decorating">Decorating<a class="headerlink" href="#decorating" title="Permanent link">&para;</a></h1>
 <p>This is a VERY quick primer on decorators in python. Specifically what they are and how to create a few different types. I'll also try to add a few real world examples.. if I'm not too lazy.</p>
 <p>If you want a more detailed explanation, I recommend <a href="https://realpython.com/primer-on-python-decorators/">this</a> site.</p>
-<h2 id="whats-a-decorator">What's a Decorator?</h2>
+<h2 id="whats-a-decorator">What's a Decorator?<a class="headerlink" href="#whats-a-decorator" title="Permanent link">&para;</a></h2>
 <p>No Carl, we're not talking about the person you hire to decorate for your wedding or a party.</p>
 <p>A python decorator, by definition, is a function that takes another function as it's argument (wrapping it) and modifies the behavior or response of the "decorated" function, without explicitly modifying it.</p>
 <p>Confused yet? Yeah me too! Let's break that down. </p>
 <p>First it's a function, that's easy enough. Second, you pass another function to it as an argument.. ok, sure.. but you're probably asking "what does that look like?" We'll get there.</p>
-<h3 id="functions-are-first-class-citizens">Functions are First Class Citizens</h3>
+<h3 id="functions-are-first-class-citizens">Functions are First Class Citizens<a class="headerlink" href="#functions-are-first-class-citizens" title="Permanent link">&para;</a></h3>
 <p>Now, I know what you're thinking Carl.. but do I really need 2 <a href="https://www.quotes.net/mquote/827451">tongues</a>.</p>
 <p>To understand how decorators work, you need to understand one important concept <a href="https://dbader.org/blog/python-first-class-functions">Python’s Functions Are First-Class objects</a>. This means a function can be passed around to other functions as an argument (kind of like a function pointer in other languages).</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -636,7 +746,7 @@
 </code></pre></div>
 </td></tr></table>
 <p>The next thing you're probably asking yourself is.. What if I still want to call <code class="highlight"><span class="n">bar</span><span class="p">()</span></code> in my code and not have to go and update everything to call <code class="highlight"><span class="n">foo</span><span class="p">(</span><span class="n">bar</span><span class="p">)</span></code>? You're getting ahead of me Carl! Take a chill pill.</p>
-<h3 id="inner-functions">Inner Functions</h3>
+<h3 id="inner-functions">Inner Functions<a class="headerlink" href="#inner-functions" title="Permanent link">&para;</a></h3>
 <p>The next important thing to know is that in Python you can define a function in a function..</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -678,7 +788,7 @@
 </code></pre></div>
 </td></tr></table>
 <p>Pretty cool, huh?</p>
-<h2 id="basic-function-wrapper">Basic Function Wrapper</h2>
+<h2 id="basic-function-wrapper">Basic Function Wrapper<a class="headerlink" href="#basic-function-wrapper" title="Permanent link">&para;</a></h2>
 <p>Sweet As! Now that you understand that functions are first class citizens in the world of python and that they can be passed around like <del>a joint at a party</del> any other object in python. And you understand how a function can return an inner function, you're now ready to take the <a href="https://en.wikipedia.org/wiki/Red_pill_and_blue_pill">blue pill</a> and see how far this decorating rabbit hole really goes.</p>
 <p>This is a simple example of how we can use one function to wrap another</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -713,7 +823,7 @@
 </code></pre></div>
 </td></tr></table>
 <p>Pretty sweet, huh? We have now wrapped <code>bar</code> with <code>foo</code> in such a way that we now can modify <code>bar</code>'s behavior/response.</p>
-<h3 id="pour-some-sugar-on-me">Pour Some Sugar on Me!</h3>
+<h3 id="pour-some-sugar-on-me">Pour Some Sugar on Me!<a class="headerlink" href="#pour-some-sugar-on-me" title="Permanent link">&para;</a></h3>
 <p>Now.. the next question, can we make this easier and even more awesome? And the answer is YEP! Python offers some sweet syntactic sugar to make decorating even better!</p>
 <p>Python has a cool feature called the <a href="https://www.python.org/dev/peps/pep-0318/#background">"pie"</a> syntax, which allows us to condense the above example into this:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -747,9 +857,9 @@
 <p class="admonition-title">Note</p>
 <p>Notice the <code>@</code> symbol above the definition of <code>bar</code> this is the "pie" syntax and when we use it this way, we are telling Python to decorate our function using the function name direcly to the right of the <code>@</code></p>
 </div>
-<h2 id="decorating-classes">Decorating Classes</h2>
+<h2 id="decorating-classes">Decorating Classes<a class="headerlink" href="#decorating-classes" title="Permanent link">&para;</a></h2>
 <p>Hey Carl, want to know a secret? Yeah of course you do! Well here it is.. You can can decorate more than just simple functions. You can also decorate class methods and even... entire classes.</p>
-<h3 id="decorating-class-methods">Decorating Class Methods</h3>
+<h3 id="decorating-class-methods">Decorating Class Methods<a class="headerlink" href="#decorating-class-methods" title="Permanent link">&para;</a></h3>
 <p>Decorating a class method is the same as the basic decorators discussed above. A real world example of this would be the <code class="highlight"><span class="nd">@staticmethod</span></code> and <code class="highlight"><span class="nd">@classmethod</span></code> decorators.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -778,7 +888,7 @@
 <p class="admonition-title">Note</p>
 <p>To define a decorate to use on a method in a class, follow the same steps above for Basic function decorators.</p>
 </div>
-<h3 id="decorating-classes_1">Decorating Classes</h3>
+<h3 id="decorating-classes_1">Decorating Classes<a class="headerlink" href="#decorating-classes_1" title="Permanent link">&para;</a></h3>
 <p>The second type of class decorator is one that decorates the entire class. When you decorate an entire class, you're actually decorating the <code class="highlight"><span class="fm">__init__</span></code> method.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -817,7 +927,7 @@
 <p class="admonition-title">Note</p>
 <p>Carl, if you're asking who <a href="https://en.wikipedia.org/wiki/Inigo_Montoya">Inigo Montoya</a> is... Get the hell off my site!</p>
 </div>
-<h2 id="advanced-usage-fancy-stuff">Advanced Usage (Fancy Stuff)</h2>
+<h2 id="advanced-usage-fancy-stuff">Advanced Usage (Fancy Stuff)<a class="headerlink" href="#advanced-usage-fancy-stuff" title="Permanent link">&para;</a></h2>
 <p>Maintaining Docstrings</p>
 <p>One of the unfortunate things about using decorators is that you lose any <code class="highlight"><span class="n">help</span></code> documentation from the "decorated" function. Take this for example:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -893,7 +1003,7 @@
 </code></pre></div>
 </td></tr></table>
 <p>Now that's more like it! As you can see if you run the above code, you're now getting the docstring from <code>bar</code> when you use <code>help</code> and not the inner wrapper.</p>
-<h2 id="real-world-examples-things-ive-actually-written">Real World Examples (Things I've actually written)</h2>
+<h2 id="real-world-examples-things-ive-actually-written">Real World Examples (Things I've actually written)<a class="headerlink" href="#real-world-examples-things-ive-actually-written" title="Permanent link">&para;</a></h2>
 <p>Sorry.. too lazy to put anything in here just yet. Maybe later.</p>
                 
               
@@ -962,7 +1072,7 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "toc.integrate", "search.suggest", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.instant", "search.suggest", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.a1c7c35e.min.js"></script>
