@@ -1,4 +1,4 @@
-## ![](_images/uglyRedBookHackers.jpg)
+![](https://github.com/LexFrench/TheUglyRedBook/raw/gh-pages/_images/uglyRedBookHackers.jpg)
 
 ## Introduction
 
