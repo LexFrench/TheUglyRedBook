@@ -1,3 +1,8 @@
+---
+hide:
+- toc        # Hide table of contents
+---
+
 ![](https://github.com/LexFrench/TheUglyRedBook/raw/gh-pages/_images/uglyRedBookHackers.jpg)
 
 ## Introduction

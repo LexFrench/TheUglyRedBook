@@ -8,13 +8,14 @@ theme:
     font:
         code: Source Sans Pro
     features:
-        - navigation.top
         - navigation.instant
         - search.suggest
         - search.highlight
 markdown_extensions:
+    - meta
     - toc:
         permalink: true
+        toc_depth: 2
     - pymdownx.highlight:
         linenums: true
     - pymdownx.superfences
